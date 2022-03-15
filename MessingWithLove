@@ -1,44 +1,28 @@
 -- Create file called main.lua
--- https://sheepolution.com/learn/book/9
-
-require("example")
+-- https://sheepolution.com/learn/book/12
 
 function love.load()
-    -- Remember: camelCasing!
-    listOfRectangles = {}
-end
+    Object = require "classic"
+    --Don't forget to load the file
+    require "shape"
 
-function createRect()
-    rect = {}
-    rect.x = 100
-    rect.y = 100
-    rect.width = 70
-    rect.height = 90
-    rect.speed = 100
+    require "rectangle"
 
-    -- Put the new rectangle in the list
-    table.insert(listOfRectangles, rect)
-end
+    --Don't forget to load the file
+    require "circle"
 
-function love.keypressed(key)
-    -- Remember, 2 equal signs (==) for comparing!
-    if key == "e" then
-        createRect()
-    end
+    r1 = Rectangle(100, 100, 200, 50)
+
+    --We make r2 a Circle instead of a Rectangle
+    r2 = Circle(350, 80, 40)
 end
 
 function love.update(dt)
-    for i, v in ipairs(listOfRectangles) do
-        v.x = v.x + v.speed * dt
-    end
+    r1:update(dt)
+    r2:update(dt)
 end
 
-function love.draw(dt)
-    for i, v in ipairs(listOfRectangles) do
-        love.graphics.rectangle("line", v.x, v.y, v.width, v.height)
-    end
-    love.graphics.print(test, 100, 100)
+function love.draw()
+    r1:draw()
+    r2:draw()
 end
-
--- For seperate file called example.lua
-test = 20
