@@ -1,28 +1,14 @@
--- Create file called main.lua
--- https://sheepolution.com/learn/book/12
-
 function love.load()
-    Object = require "classic"
-    --Don't forget to load the file
-    require "shape"
-
-    require "rectangle"
-
-    --Don't forget to load the file
-    require "circle"
-
-    r1 = Rectangle(100, 100, 200, 50)
-
-    --We make r2 a Circle instead of a Rectangle
-    r2 = Circle(350, 80, 40)
+    Fuck = require "fuck"
+    require "player"
+    r1 = Rectangle()
+    r2 = Rectangle()
 end
 
 function love.update(dt)
-    r1:update(dt)
-    r2:update(dt)
+    r1.update(r1, dt)
 end
 
 function love.draw()
-    r1:draw()
-    r2:draw()
+    r1.draw(r1)
 end
