@@ -1,6 +1,6 @@
-Rectangle = Fuck.extend(Fuck)
+Player = Fuck.extend(Fuck)
 
-function Rectangle.new(self)
+function Player.new(self)
     self.x = 50
     self.y = 100
     self.width = 200
@@ -8,7 +8,7 @@ function Rectangle.new(self)
     self.speed = 100
 end
 
-function Rectangle.update(self, dt)
+function Player.update(self, dt)
     if love.keyboard.isDown("a") then
         self.x = self.x - self.speed * dt
     elseif love.keyboard.isDown("d") then
@@ -23,11 +23,12 @@ function Rectangle.update(self, dt)
 
     if love.mouse.isDown(1) then
         self.width = self.width + 50
-    elseif love.mouse.isDown(2) then
+    end
+    if love.mouse.isDown(2) and self.width > 50 then
         self.width = self.width - 50
     end
 end
 
-function Rectangle.draw(self)
+function Player.draw(self)
     love.graphics.rectangle("line", self.x, self.y, self.width, self.height)
 end
