@@ -1,8 +1,14 @@
 function love.load()
     Fuck = require "fuck"
     require "player"
-    r1 = Rectangle()
-    r2 = Rectangle()
+    require "collision"
+    r1 = Player()
+    r2 = {
+        x = 250,
+        y = 120,
+        width = 150,
+        height = 120
+    }
 end
 
 function love.update(dt)
@@ -10,5 +16,12 @@ function love.update(dt)
 end
 
 function love.draw()
+    local mode
+    if checkCollision(r1, r2) then
+        mode = "fill"
+    else
+        mode = "line"
+    end
     r1.draw(r1)
+    love.graphics.rectangle(mode, r2.x, r2.y, r2.width, r2.height)
 end
