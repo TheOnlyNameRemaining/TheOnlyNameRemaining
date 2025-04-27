@@ -1,8 +1,6 @@
-- Hi, I’m @TheOnlyNameRemaining
-- I’m interested in LEARNING
-- I’m currently learning TO CODE
-- I’m looking to collaborate on NOTHING
-- How to reach me NOPE
+Hi, I’m James Cornell, a Computer Engineering student at the University of Minnesota.
+I've been coding on and off for almost 5 years now, and have expertise in C++, JavaScript, C#, Java, and Lua.
+I'm a FIRST alumni, and my favorite hobby is Dungeons and Dragons.
 
 <!---
 TheOnlyNameRemaining/TheOnlyNameRemaining is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
